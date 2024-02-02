@@ -1,2 +1,2 @@
 # Blackjack_Project
- This is a card game Blackjack created with JavaScript
+ This is a card game Blackjack created with JavaScript and jQuery.
