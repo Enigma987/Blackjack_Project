@@ -10,6 +10,7 @@ h1 {
 .card {
     width: 150px;
     height: 250px;
+    border-radius: 10%;
 
     display: flex;
     justify-content: center;

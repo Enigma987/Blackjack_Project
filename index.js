@@ -1,6 +1,6 @@
 var ranks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
 
-var suits = ["club", "diamond", "heart", "spade"];
+var suits = ["Club", "Diamond", "Heart", "Spade"];
 
 var cards = [];
 var leftCardOnDeck = [];
@@ -55,7 +55,9 @@ function Card(rank, suit) {
     this.rank = rank;
     this.suit = suit;
     this.value = blackjackValues(rank);
-    this.name = rank + " - " + suit;
+    this.name = rank + "_" + suit;
+    var pic_ = new Image();
+    this.pic = pic_.src = "./images/" + this.name + ".png";
 }
 
 function loadAllDeck() {
@@ -90,7 +92,7 @@ function playerTurn() {
     $("." + choosePosition(playerHand.length-1)).text(playerCard.name);
     $(".playerPoints").text(playerValue);
 
-    $('.playerCards').append($('<p class="card"></p>').text(playerCard.name));
+    $('.playerCards').append($("<img class='card' src=" + playerCard.pic + "></p>"));
 }
 
 function croupierTurn() {
