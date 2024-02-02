@@ -1,0 +1,41 @@
+h1 {
+    color: purple;
+}
+
+.purple {
+    color: purple;
+    font-size: 3rem;
+}
+
+.card {
+    width: 150px;
+    height: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: lightseagreen;
+}
+
+.zero {
+
+}
+
+.one {
+
+}
+
+.two {
+
+}
+
+.three {
+
+}
+
+.conteiner {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
