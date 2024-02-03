@@ -10,14 +10,55 @@
 <body>
     <h1> Blackjack </h1>
 
+    <h2>ff</h2>
+
+    <button> Start new game </button>
+    <button> New turn </button>
+
+    <div class="rules">
+        <p> <ul>
+                Rules of the game:
+                <li>Main goal of Blackjack is to get 21 or more than the croupier.</li>
+                <li>Click “Start New Game” to start a completely new game with a new card deck.</li>
+                <li>Click “New Round” if you want to start the new round with the same card deck (cards from the previous turn do not take part in the new turn).</li>
+                <li>At the beginning of the game both player and croupier get a card (you can’t see the croupier card)</li>
+                <li>
+                    The first turn is yours, you can click
+                    <ul>
+                        <li>Hit – if you want to take another card from the deck;</li>
+                        <li>Pass – if you think you have enough points give a turn to the croupier.</li>
+                    </ul>
+                </li>
+                <li>After your turn, the croupier gets new cards to the moment when he will have 21 or more points than you (but less 21 of course).</li>
+                <li>If you have 21 points, you automatically win this round.</li>
+                <li>If you have above 21 points you lose and the croupier gets a point.</li>
+                <li>
+                    Cards points – each card has a different value:
+                    <ul>
+                        <li>Cards of rank 2 – 10 have the same points mean 2-10</li>
+                        <li>All face cards (Jack, Queen, King) have 10 points</li>
+                        <li>Aces have 11 points</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="conteiner">
+        <p>Player Points:</p> <p class="playerPoints"> 0 </p>
+    </div>
+    <div class="conteiner">
+        <p>Player Points:</p> <p class="playerPoints"> 0 </p>
+    </div>
+
     <div class="conteiner">
         <button class="btn hit"> Hit </button>
         <button class="btn pass"> Pass </button>
     </div>
 
     <br />
-    <div class="conteiner"> 
-        <p>Player Points:</p> <p class="playerPoints"> 0 </p> 
+    <div class="conteiner">
+        <p>Player Points:</p> <p class="playerPoints"> 0 </p>
     </div>
     <div class="conteiner player">
 
@@ -25,8 +66,13 @@
         </div>
     </div>
 
+    <div class="conteiner">
+        <p>Croupier Points:</p> <p class="croupierPoints"> 0 </p>
+    </div>
     <div class="conteiner courier">
-        <div>Croupier Points:</div> <div class="croupierPoints"> 0 </div>
+
+        <div class="conteiner croupierCards">
+        </div>
     </div>
 
 
