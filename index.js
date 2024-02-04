@@ -10,6 +10,9 @@ var croupierHand = [];
 var playerValue = 0;
 var croupierValue = 0;
 
+var playerPoints = 0;
+var croupierPoints = 0;
+
 function blackjackValues(rank) {
     switch (rank) {
         case "2":
@@ -51,6 +54,12 @@ function loadAllDeck() {
 
 loadAllDeck();
 leftCardOnDeck = cards;
+$(".hit").attr("disabled", true);
+$(".pass").attr("disabled", true);
+$(".newTurn").attr("disabled", true);
+
+
+
 
 function randomCard() {
     var randomNumber = Math.floor(Math.random() * leftCardOnDeck.length);
@@ -74,15 +83,22 @@ $(".hit").click(function () {
     $('.playerCards').append($("<img class='card' src=" + playerCard.pic + "></p>"));
 
     if (playerValue === 21) {
-        $("h2").text("Hurra, Blackjack!!!");
+        $(".result").text("Hurra, Blackjack!!!");
+        playerPoints++;
+        $(".playerPointsAll").text(playerPoints);
 
         $(".hit").attr("disabled", true);
         $(".pass").attr("disabled", true);
+
+        $(".newTurn").attr("disabled", false);
     } else if (playerValue > 21) {
-        $("h2").text("Sorry you lose you have above 21 points :(");
+        $(".result").text("Sorry you lose you have above 21 points :(");
+        croupierPoints++;
+        $(".croupierPointsAll").text(croupierPoints);
 
         $(".hit").attr("disabled", true);
         $(".pass").attr("disabled", true);
+        $(".newTurn").attr("disabled", false);
     }
 });
 
@@ -106,19 +122,79 @@ async function croupierTurn() {
     }
 
     if (croupierValue > playerValue && croupierValue <= 21) {
-        $("h2").text("Sorry you lose - croupier win :(");
+        $(".result").text("Sorry you lose - croupier win :(");
+        croupierPoints++;
+        $(".croupierPointsAll").text(croupierPoints);
+        $(".newTurn").attr("disabled", false);
+
     } else if (croupierValue > 21) {
-        $("h2").text("You win :)");
+        $(".result").text("You win :)");
+        playerPoints++;
+        $(".playerPointsAll").text(playerPoints);
+        $(".newTurn").attr("disabled", false);
     }
 }
-
-
 
 $(".pass").click(function () {
     $(".hit").attr("disabled", true);
     $(this).attr("disabled", true);
 
     croupierTurn();
+})
+
+$(".newGame").click(function () {
+    playerValue = 0;
+    $(".playerPoints").text(playerValue);
+
+    croupierValue = 0;
+    $(".croupierPoints").text(croupierValue);
+
+    playerPoints = 0;
+    $(".playerPointsAll").text(playerPoints);
+
+    croupierPoints = 0;
+    $(".croupierPointsAll").text(croupierPoints);
+
+    leftCardOnDeck = cards;
+    playerHand = [];
+    croupierHand = [];
+
+    document.querySelectorAll(".card").forEach(e => e.remove());
+
+    $(".hit").attr("disabled", false);
+    $(".pass").attr("disabled", false);
+
+    var playerCard = randomCard();
+    playerValue += playerCard.value;
+    playerHand.push(playerCard);
+
+    $(".playerPoints").text(playerValue);
+
+    $('.playerCards').append($("<img class='card' src=" + playerCard.pic + "></p>"));
+})
+
+$(".newTurn").click(function () {
+    playerValue = 0;
+    $(".playerPoints").text(playerValue);
+
+    croupierValue = 0;
+    $(".croupierPoints").text(croupierValue);
+
+    playerHand = [];
+    croupierHand = [];
+
+    document.querySelectorAll(".card").forEach(e => e.remove());
+
+    $(".hit").attr("disabled", false);
+    $(".pass").attr("disabled", false);
+
+    var playerCard = randomCard();
+    playerValue += playerCard.value;
+    playerHand.push(playerCard);
+
+    $(".playerPoints").text(playerValue);
+
+    $('.playerCards').append($("<img class='card' src=" + playerCard.pic + "></p>"));
 })
 
 

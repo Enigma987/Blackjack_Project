@@ -1,10 +1,75 @@
-h1 {
-    color: purple;
+
+body {
+    background: url("./images/table.jpg") no-repeat fixed;
+    background-size: cover;
+    font-family: 'Josefin Sans', sans-serif;
+    color: palegoldenrod;
 }
 
-.purple {
-    color: purple;
+h1 {
+    font-family: 'Bodoni Moda', serif;
     font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Bodoni Moda', serif;
+}
+
+.gridConteiner {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.25fr;
+    grid-template-rows: 0.15fr 1fr 1fr;
+}
+
+.gridLogo {
+    grid-area: 1 / 1 / 1 / 1;
+    display: flex;
+    justify-content: center;
+    background-color: #696969;
+    border-radius: 5%;
+    letter-spacing: 4px;
+}
+
+.gridRules {
+    padding: 30px;
+    padding-top: 10px;
+    padding-left: 0;
+    grid-area: 2 / 1 / -1 / 1;
+}
+
+.gridButtons {
+    grid-area: 1 / 2 / 1 / 2;
+    display: flex;
+    gap: 100px;
+    padding-top: 10px;
+}
+
+.gridHeader {
+    display: flex;
+    flex-direction: column;
+    background-color: #5c715e;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridActions {
+    grid-area: 3 / 3 / 3 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bgStyle {
+    background: url("./images/wood_panel.jpg");
+    border: 5px solid black;
+    border-radius: 5%;
+}
+
+.gridAllPoints {
+    grid-area: 2 / 3 / 2 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card {
@@ -15,28 +80,52 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: lightseagreen;
-}
-
-.zero {
-
-}
-
-.one {
-
-}
-
-.two {
-
-}
-
-.three {
-
 }
 
 .conteiner {
     display: flex;
     gap: 20px;
     justify-content: center;
+}
+
+.mainBoard {
+    grid-area: 2 / 2 / 4 / 2; 
+}
+
+.gameBoard {
+    background: url("./images/wood_background.jpg");
+    border-radius: 5px;
+    height: 305px;
+}
+
+
+.gameCards {
+    gap: 5px;
+}
+
+
+.btn {
+    font-size: 17pt;
+    font-weight: 800;
+    background: linear-gradient(0deg, #c7c230 0%, #d8e300 90%);
+    padding: 10px 30px;
+    border: solid #171717 3px;
+    box-shadow: rgb(141, 145, 25) 8px 5px 25px 5px;
+    border-radius: 20px;
+    transition: 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    transition: 2352ms;
+    padding: 10px 36px;
+    transform: translateY(-0px);
+    background: linear-gradient(0deg, #c7c230 0%, #d8e300 90%);
+    color: #3e464f;
+    border: solid 3px #0066cc;
 }

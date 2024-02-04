@@ -6,75 +6,89 @@
     <title> Blackjack </title>
 
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1> Blackjack </h1>
+    <div class="gridConteiner">
+        <div class="gridLogo">
+            <h1> BLACKJACK </h1>
+        </div>
+        <div class="gridHeader bgStyle">
+            <div class="gridButtons">
+                <button class="newGame btn"> Start new game </button>
+                <button class="newTurn btn"> New turn </button>
+            </div>
+            <div>
+                <h2 class="result">Result</h2>
+            </div>
+        </div>
+        
+        <div class="gridRules bgStyle">
+            <p>
+               
+                <ul>
+                    <h2>Rules of the game:</h2>
+                    <li>Main goal of Blackjack is to get 21 or more than the croupier.</li>
+                    <li>Click “Start New Game” to start a completely new game with a new card deck.</li>
+                    <li>Click “New Round” if you want to start the new round with the same card deck.</li>
+                    <li>
+                        The first turn is yours, you can click
+                        <ul>
+                            <li>Hit – if you want to take another card from the deck;</li>
+                            <li>Pass – if you think you have enough points give a turn to the croupier.</li>
+                        </ul>
+                    </li>
+                    <li>After your turn, the croupier gets new cards to the moment when he will have 21 or more points than you (but less 21 of course).</li>
+                    <li>If you have 21 points, you automatically win this round.</li>
+                    <li>If you have above 21 points you lose and the croupier gets a point.</li>
+                    <li>
+                        Cards points – each card has a different value:
+                        <ul>
+                            <li>Cards of rank 2 – 10 have the same points mean 2-10</li>
+                            <li>All face cards (Jack, Queen, King) have 10 points</li>
+                            <li>Aces have 11 points</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+        </div>
 
-    <h2>ff</h2>
+        <div class="gridAllPoints bgStyle">
+            <div class="conteiner">
+                <p>Player Points:</p> <p class="playerPointsAll"> 0 </p>
+            </div>
+            <div class="conteiner">
+                <p>Croupier Points:</p> <p class="croupierPointsAll"> 0 </p>
+            </div>
+        </div>
 
-    <button> Start new game </button>
-    <button> New turn </button>
 
-    <div class="rules">
-        <p> <ul>
-                Rules of the game:
-                <li>Main goal of Blackjack is to get 21 or more than the croupier.</li>
-                <li>Click “Start New Game” to start a completely new game with a new card deck.</li>
-                <li>Click “New Round” if you want to start the new round with the same card deck (cards from the previous turn do not take part in the new turn).</li>
-                <li>At the beginning of the game both player and croupier get a card (you can’t see the croupier card)</li>
-                <li>
-                    The first turn is yours, you can click
-                    <ul>
-                        <li>Hit – if you want to take another card from the deck;</li>
-                        <li>Pass – if you think you have enough points give a turn to the croupier.</li>
-                    </ul>
-                </li>
-                <li>After your turn, the croupier gets new cards to the moment when he will have 21 or more points than you (but less 21 of course).</li>
-                <li>If you have 21 points, you automatically win this round.</li>
-                <li>If you have above 21 points you lose and the croupier gets a point.</li>
-                <li>
-                    Cards points – each card has a different value:
-                    <ul>
-                        <li>Cards of rank 2 – 10 have the same points mean 2-10</li>
-                        <li>All face cards (Jack, Queen, King) have 10 points</li>
-                        <li>Aces have 11 points</li>
-                    </ul>
-                </li>
-            </ul>
-        </p>
-    </div>
-
-    <div class="conteiner">
-        <p>Player Points:</p> <p class="playerPoints"> 0 </p>
-    </div>
-    <div class="conteiner">
-        <p>Player Points:</p> <p class="playerPoints"> 0 </p>
-    </div>
-
-    <div class="conteiner">
-        <button class="btn hit"> Hit </button>
-        <button class="btn pass"> Pass </button>
-    </div>
-
-    <br />
-    <div class="conteiner">
-        <p>Player Points:</p> <p class="playerPoints"> 0 </p>
-    </div>
-    <div class="conteiner player">
-
-        <div class="conteiner playerCards">
+        <div class="gridActions conteiner bgStyle">
+            <button class="btn hit"> Hit </button>
+            <button class="btn pass"> Pass </button>
+        </div>
+        
+        <div class="mainBoard">
+            <div class="gameBoard">
+                <div class="conteiner">
+                    <p>Player Hands:</p> <p class="playerPoints"> 0 </p>
+                </div>
+                <div class="conteiner playerCards"></div>
+            </div>
+            <div class="gameBoard">
+                <div class="conteiner">
+                    <p>Croupier Hands:</p> <p class="croupierPoints"> 0 </p>
+                </div>
+                <div class="conteiner croupierCards"></div>
+            </div>
         </div>
     </div>
-
-    <div class="conteiner">
-        <p>Croupier Points:</p> <p class="croupierPoints"> 0 </p>
-    </div>
-    <div class="conteiner courier">
-
-        <div class="conteiner croupierCards">
-        </div>
-    </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./index.js" charset="utf-8"></script>
