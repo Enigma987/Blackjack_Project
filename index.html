@@ -16,8 +16,9 @@
 </head>
 <body>
     <div class="gridConteiner">
-        <div class="gridLogo">
-            <h1> BLACKJACK </h1>
+        <div class="gridLogo bgStyle">
+            <img class="src" src="./images/cards.svg" />
+            <h1>BLACKJACK</h1>
         </div>
         <div class="gridHeader bgStyle">
             <div class="gridButtons">
@@ -25,7 +26,7 @@
                 <button class="newTurn btn"> New turn </button>
             </div>
             <div>
-                <h2 class="result">Result</h2>
+                <h2 class="result">Game on</h2>
             </div>
         </div>
         
@@ -79,13 +80,13 @@
                 <div class="conteiner">
                     <p>Player Hands:</p> <p class="playerPoints"> 0 </p>
                 </div>
-                <div class="conteiner playerCards"></div>
+                <div class="conteiner playerCards gameCards"></div>
             </div>
             <div class="gameBoard">
                 <div class="conteiner">
                     <p>Croupier Hands:</p> <p class="croupierPoints"> 0 </p>
                 </div>
-                <div class="conteiner croupierCards"></div>
+                <div class="conteiner croupierCards gameCards"></div>
             </div>
         </div>
     </div>

@@ -9,6 +9,7 @@ body {
 h1 {
     font-family: 'Bodoni Moda', serif;
     font-size: 3rem;
+    padding: 10px;
 }
 
 h2 {
@@ -23,11 +24,15 @@ h2 {
 
 .gridLogo {
     grid-area: 1 / 1 / 1 / 1;
-    display: flex;
+    display:flex;
     justify-content: center;
     background-color: #696969;
     border-radius: 5%;
     letter-spacing: 4px;
+}
+
+.src {
+    height: 150px;
 }
 
 .gridRules {
@@ -70,6 +75,8 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    font-size: 18pt;
 }
 
 .card {
@@ -89,7 +96,9 @@ h2 {
 }
 
 .mainBoard {
-    grid-area: 2 / 2 / 4 / 2; 
+    grid-area: 2 / 2 / 4 / 2;
+    font-size: 13pt;
+    color: #222831;
 }
 
 .gameBoard {
@@ -101,6 +110,12 @@ h2 {
 
 .gameCards {
     gap: 5px;
+}
+
+.result {
+    text-transform: uppercase;
+    font-size: 22pt;
+    padding-top: 6px;
 }
 
 

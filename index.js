@@ -62,15 +62,23 @@ $(".newTurn").attr("disabled", true);
 
 
 function randomCard() {
-    var randomNumber = Math.floor(Math.random() * leftCardOnDeck.length);
+    if (leftCardOnDeck.length != 0) {
+        var randomNumber = Math.floor(Math.random() * leftCardOnDeck.length);
 
-    var card = leftCardOnDeck[randomNumber];
+        var card = leftCardOnDeck[randomNumber];
 
-    leftCardOnDeck = leftCardOnDeck.filter(function (cardToRemove) {
-        return cardToRemove !== card;
-    })
+        leftCardOnDeck = leftCardOnDeck.filter(function (cardToRemove) {
+            return cardToRemove !== card;
+        })
 
-    return card;
+        return card;
+    } else {
+        $(".hit").attr("disabled", true);
+        $(".pass").attr("disabled", true);
+        $(".newTurn").attr("disabled", true);
+        $(".result").text("There is no left cards in the deck. Start new game");
+    }
+    
 }
 
 $(".hit").click(function () {
@@ -138,11 +146,13 @@ async function croupierTurn() {
 $(".pass").click(function () {
     $(".hit").attr("disabled", true);
     $(this).attr("disabled", true);
+    
 
     croupierTurn();
 })
 
 $(".newGame").click(function () {
+    $(".result").text("Game on");
     playerValue = 0;
     $(".playerPoints").text(playerValue);
 
@@ -174,6 +184,7 @@ $(".newGame").click(function () {
 })
 
 $(".newTurn").click(function () {
+    $(".result").text("Game on");
     playerValue = 0;
     $(".playerPoints").text(playerValue);
 
